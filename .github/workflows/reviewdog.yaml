@@ -4,7 +4,7 @@ jobs:
   actionlint:
     runs-on: [ubuntu]
     steps:
-      - run: echo $FOO
+      - run: echo $FOO-BAR
       - run: echo "Hello, world!!"
       - uses: actions/checkout@v4
       - uses: reviewdog/action-actionlint@v1
