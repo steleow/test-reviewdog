@@ -1,0 +1,19 @@
+name: build
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    name: Build simple test 123
+    runs-on: [ubuntu]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run Trivy vulnerability scanner in fs mode
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        exit-code: 1

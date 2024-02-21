@@ -1,0 +1,20 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/mxab/pre-commit-trivy.git
+    rev: v0.11.0
+    hooks:
+      - id: trivyfs-docker
+        args:
+          - --scanners
+          - vuln,secret,misconfig
+          - --format
+          - table
+          - . # last arg indicates the path/file to scan
+      - id: trivyconfig-docker
+        args:
+          - --format
+          - table
+          - --compliance
+          - k8s-nsa
+          - . # last arg indicates the path/file to scan

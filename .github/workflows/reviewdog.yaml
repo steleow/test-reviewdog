@@ -1,0 +1,10 @@
+name: reviewdog
+on: [pull_request]
+jobs:
+  actionlint:
+    runs-on: [ubuntu]
+    steps:
+      - run: echo $FOO
+      - run: echo "Hello, world!"
+      - uses: actions/checkout@v4
+      - uses: reviewdog/action-actionlint@v1
