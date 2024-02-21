@@ -2,7 +2,7 @@ name: reviewdog
 on: [pull_request]
 jobs:
   actionlint:
-    runs-on: [ubuntu]
+    runs-on: [ubuntu-latest]
     steps:
       - run: echo $FOO
       - run: echo "Hello, world!"
